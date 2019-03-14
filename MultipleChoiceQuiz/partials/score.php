@@ -2,7 +2,7 @@
 <head>
 <title>RESULT</title>
 
-<link rel="stylesheet" href="../js/style.css" />
+<link rel="stylesheet" href="../css/style.css" />
 
 </head>
 

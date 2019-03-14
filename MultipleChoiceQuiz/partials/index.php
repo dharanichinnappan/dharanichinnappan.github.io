@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
 <head>
 <title>INDEX PAGE</title>
 
-<link rel="stylesheet" href="../js/style.css" />
+<link rel="stylesheet" href="../css/style.css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
