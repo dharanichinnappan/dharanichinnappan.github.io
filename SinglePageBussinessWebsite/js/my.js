@@ -38,11 +38,14 @@ $(window).on(
 		'scroll.myfunction',
 		function() {
 			var hT = $('#topSlide').offset().top,
+			 hH = $('#topSlide').outerHeight(),
 		       wH = $(window).height(),
 		       wS = $(this).scrollTop();
 			//console.log(hT,wS,hT-wS);
-		   if ((hT-wS)<600) {
-			 console.log(hT,wS,hT-wS);
+			//(hT-wS)<600
+			
+		   if (wS > (hT+hH-wH)) {
+			 //console.log(hT,wS,hT-wS);
 				myfunction();
 				$(window).off('scroll.myfunction');
 
