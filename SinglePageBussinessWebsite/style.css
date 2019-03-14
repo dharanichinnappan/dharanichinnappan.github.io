@@ -1,50 +1,36 @@
-
-
 .navbar-default {
 	background-color: white ! important;
 	margin-bottom: 0px ! important;
-	
 }
 
 .navbar li  a {
 	color: black ! important;
-	
 }
 
-.navbar-brand {	
+.navbar-brand {
 	color: black ! important;
-	position: relative;		
+	position: relative;
 }
-
-
 
 body {
-	color: black ! important;	
-	
+	color: black ! important;
 }
 
 .banner {
-	padding:30px 0px;
+	padding: 30px 0px;
 	color: white;
 	text-align: center;
 	display: inline-block;
-	
 }
 
 .banner_heading {
-	color:white;
+	color: white;
 	margin: 20px 0px;
 	font-size: 80px;
 	font-weight: bold;
 }
-@media only screen and (max-width: 520px) {
-	.featureSectionHeading , .featureSectionContent {
-		text-align: left;
-	}
-	
-}
 
-.bannerText{
+.bannerText {
 	background: transparent ! important;
 	color: white ! important;
 	text-align: center ! important;
@@ -53,7 +39,8 @@ body {
 	font-size: 28px ! important;
 	color: #eaecef ! important;
 }
-.pre{
+
+.pre {
 	background: transparent ! important;
 	color: white ! important;
 	text-align: left ! important;
@@ -62,6 +49,7 @@ body {
 	font-size: 28px ! important;
 	color: #eaecef ! important;
 }
+
 .getStarted {
 	background: transparent;
 	border: 1px solid white;
@@ -120,6 +108,7 @@ body {
 	margin: 30px 0px;
 	text-align: center;
 	padding: 40px 0px;
+	
 }
 
 .featureHeading_1, .teamHeading_1, .teamSubHeading_1 {
@@ -147,7 +136,6 @@ body {
 	margin-top: 20px;
 }
 
-
 .featureDescription, .teamDescription {
 	font-size: 18px;
 	margin-top: 30px;
@@ -156,27 +144,33 @@ body {
 	margin-bottom: 20px;
 }
 
-}
 .featureSection {
 	margin-top: 40px;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-left: 40px;
+	padding: 40px;
 }
 
 .featureSection_1 {
 	text-align: right;
 	padding: 20px;
-	padding-left: 100px ! important;
+	
 }
+
 @media only screen and (max-width: 520px) {
-	.featureSection_1 , .featureSection_2{
-		padding:20px 0px ! important;
+	
+	.featureSection_1, .featureSection_2, .featureSection_3 {
+		padding: 20px 0px ! important;
+		text-align: center ! important;
+		
+	}
+	.featureSectionHeading {
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+	}
+	.featureSection {
+		padding: 20px ! important;
 	}
 }
-
-
-
 
 .featureSection_2 {
 	text-align: center;
@@ -186,12 +180,13 @@ body {
 .featureSection_3 {
 	text-align: left;
 	padding: 20px;
-	padding-right: 100px ! important;
+	
 }
 
 .featureSectionHeading {
 	font-size: 20px;
 	font-weight: bold;
+	text-align: center;
 }
 
 .featureSectionContent {
@@ -201,19 +196,30 @@ body {
 	line-height: 0.7cm;
 }
 
+@media only screen and (max-width: 520px) {
+	.featureSectionHeading, .featureSectionContent {
+		text-align: left;
+	}
+	.featureSection {
+		margin-top: 40px;
+		/* padding-left: 40px;
+	padding-right: 40px;
+	padding-left: 40px; */
+		padding: 0px;
+	}
+}
 
 #menuBuilder {
 	padding: 40px 100px;
 	padding-bottom: 70px;
 	color: white;
-	
-}
-@media only screen and (max-width: 520px) {
-	#menuBuilder {
-		padding:40px 0px;
-	}
 }
 
+@media only screen and (max-width: 520px) {
+	#menuBuilder {
+		padding: 40px 0px;
+	}
+}
 
 .viewMore, .applyForAJob {
 	background: blue;
@@ -271,13 +277,12 @@ td a {
 }
 
 .footer>hr {
-	
 	border-bottom: 1px dotted #d4d6d6 ! important;
 	padding-top: 30px ! important;
 }
 
 .footer {
-	margin-top:20px;
+	margin-top: 20px;
 	padding: 0px 60px ! important;
 }
 
