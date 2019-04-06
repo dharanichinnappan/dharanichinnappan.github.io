@@ -21,7 +21,7 @@ https://dharanichinnappan.github.io/singlePageWebsite
 
 **Website Link:**
 
-dharanichinnappan.github.io/SinglePageBussinessWebsite
+https://dharanichinnappan.github.io/SinglePageBussinessWebsite
 
 **3.MultiPageWebsite**
 
