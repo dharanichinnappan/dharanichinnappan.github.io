@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SMS Frontend Task</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/angular.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+</head>
+<body data-ng-app="myApp" data-ng-controller="indexController">
+	<div class="col-sm-12 col-md-12 col-lg-12 ">
+		<form>
+			from:<input type="date"  data-ng-model="from" name="from"> to:<input
+				type="date" data-ng-moel="to" name="to">
+			<div>
+				<button data-ng-click="filter(from,to)">FILTER</button>	
+				<button data-ng-click="reset()">RESET</button>				
+			</div>
+		</form>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+		<table>
+			<tbody>
+				<tr>
+					<th>CITY
+						<button data-ng-click="sort_asc('city')">&uarr;</button>
+						<button data-ng-click="sort_des('city')">&darr;</button>
+					</th>
+					<th>START DATE
+						<button data-ng-click="sort_asc('start_date')">&uarr;</button>
+						<button data-ng-click="sort_des('start_date')">&darr;</button>
+					</th>
+					<th>END DATE
+						<button data-ng-click="sort_asc('end_date')">&uarr;</button>
+						<button data-ng-click="sort_des('end_date')">&darr;</button>
+					</th>
+					<th>PRICE
+						<button data-ng-click="sort_asc('price')">&uarr;</button>
+						<button data-ng-click="sort_des('price')">&darr;</button>
+					</th>
+					<th>STATUS
+						<button data-ng-click="sort_asc('status')">&uarr;</button>
+						<button data-ng-click="sort_des('status')">&darr;</button>
+					</th>
+					<th>COLOR
+						<button data-ng-click="sort_asc('color')">&uarr;</button>
+						<button data-ng-click="sort_des('color')">&darr;</button>
+					</th>
+				</tr>
+				<tr data-ng-repeat="data in datas">
+					<td>{{data.city}}</td>
+					<td>{{data.start_date}}</td>
+					<td>{{data.end_date}}</td>
+					<td>{{data.price}}</td>
+					<td>{{data.status}}</td>
+					<td>{{data.color}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
