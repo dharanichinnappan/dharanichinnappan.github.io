@@ -1,0 +1,13 @@
+table {
+	width: 100%;
+	border:1px solid gray;
+	
+}
+th,td{
+	border: 1px solid gray;
+	padding:10px;
+}
+td{
+	width: 16.66%;
+}
+
