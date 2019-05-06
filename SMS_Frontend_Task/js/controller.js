@@ -3,48 +3,56 @@ myApp = angular.module("myApp", []);
 myApp.controller('indexController', function($scope, $http, $filter) {
 	$scope.from = "";
 	$scope.to = "";
-	$http.get('data.json').success(function(data) {
-		$scope.datas = data;
-		$scope.copy_of_datas = $scope.datas;
-		angular.forEach($scope.datas, function(value, key) {
-
+	$scope.load = function() {
+		$http.get('data.json').success(function(data) {
+			$scope.datas = data;
+			$scope.copy_of_datas = $scope.datas;
 		})
-		console.log($scope.datas[1]);
-	})
-	$scope.sort_asc = function(data) {
+	}
 
-		$scope.datas = $filter('orderBy')($scope.datas, data);
+	$scope.sort_asc = function(data) {
+		if (data == 'date') {
+			
+		} else {
+			$scope.datas = $filter('orderBy')($scope.datas, data);
+		}
 	}
 
 	$scope.sort_des = function(data) {
-		$scope.datas = $filter('orderBy')($scope.datas, data, true);
+		if (data == 'date') {
+		} else {
+			$scope.datas = $filter('orderBy')($scope.datas, data, true);
+		}
 	}
+
 	$scope.filter = function(from, to) {
-		$scope.n = 0;
+
 		$scope.from = from;
 		$scope.to = to;
-		console.log($scope.from + "and" + $scope.to);
 
 		angular.forEach($scope.copy_of_datas, function(value, key) {
 			if (value != null) {
-				$scope.start_date = Date.parse(value.start_date);
-				if ($scope.from > $scope.start_date) {
-					$scope.datas[key] = null
-				}
-				$scope.end_date = Date.parse(value.end_date);
-
-				if ($scope.end_date > $scope.to) {
+				$scope.start_date = new Date(value.start_date);
+				$scope.end_date = new Date(value.end_date);
+				/*
+				 * In the given data , few start dates are larger than end
+				 * dates. So adding ($scope.start_date>$scope.to ||
+				 * $scope.end_date<$scope.from)
+				 */
+				if ($scope.start_date < $scope.from
+						|| $scope.end_date > $scope.to
+						|| $scope.start_date >= $scope.to
+						|| $scope.end_date <= $scope.from) {
 					$scope.datas[key] = null;
 				}
 			}
+
 		});
-		console.log($scope.n);
 
 	}
 
 	$scope.reset = function() {
-		$scope.datas = $scope.copy_of_datas;
-		console.log($scope.datas);
+		$scope.load();
 	}
 });
 
