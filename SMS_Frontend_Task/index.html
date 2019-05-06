@@ -11,11 +11,11 @@
 <body data-ng-app="myApp" data-ng-controller="indexController">
 	<div class="col-sm-12 col-md-12 col-lg-12 ">
 		<form>
-			from:<input type="date"  data-ng-model="from" name="from"> to:<input
-				type="date" data-ng-moel="to" name="to">
+			from:<input type="date" data-ng-model="from" name="from"> to:<input
+				type="date" data-ng-model="to" name="to">
 			<div>
-				<button data-ng-click="filter(from,to)">FILTER</button>	
-				<button data-ng-click="reset()">RESET</button>				
+				<button data-ng-click="filter(from,to)">FILTER</button>
+				<button data-ng-click="reset()">RESET</button>
 			</div>
 		</form>
 	</div>
@@ -49,7 +49,7 @@
 						<button data-ng-click="sort_des('color')">&darr;</button>
 					</th>
 				</tr>
-				<tr data-ng-repeat="data in datas">
+				<tr data-ng-repeat="data in datas|filter:{data:'!'} track by $index">
 					<td>{{data.city}}</td>
 					<td>{{data.start_date}}</td>
 					<td>{{data.end_date}}</td>
