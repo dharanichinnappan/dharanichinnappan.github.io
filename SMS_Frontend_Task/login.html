@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LOGIN VALIDATION</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/angular.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+</head>
+<body data-ng-app="myApp" data-ng-controller="loginController">
+	<form>
+		<div class="col-sm-12 col-md-12 col-lg-12 ">
+			<div class="col-sm-8 col-md-8 col-lg-8">
+				Email:<input type="email" data-ng-model="email" id="email" />
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4" id="email_null">Email cannot be null!</div>
+		</div>
+		<div>
+			password:<input type="password" data-ng-model="password" />
+		</div>
+		<div>
+			Confirm password:<input type="password"
+				data-ng-model="confirm_password" id="confirm_password" />
+			<div id="password_match_error">Password does not match</div>
+		</div>
+		<button type="submit" data-ng-click="login()">LOGIN</button>
+	</form>
+</body>
+</html>
