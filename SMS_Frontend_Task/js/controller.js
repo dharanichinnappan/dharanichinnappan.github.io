@@ -3,117 +3,170 @@ myApp = angular.module("myApp", []);
 myApp.controller('indexController', function($scope, $http, $filter) {
 	$scope.from = "";
 	$scope.to = "";
-	$scope.load = function() {
-		console.log("load function is being called");
-		$http.get('data.json').success(function(data) {
-			$scope.datas = data;
-			$scope.copy_of_datas = data;
-		})
-	}
+
+	$http.get('data.json').success(function(data) {
+		$scope.datas = data;
+
+	})
 
 	$scope.sort_asc = function(data) {
-		if (data == 'start_date') {
+		if(data=='start_date'){
+			
+			$scope.copy = [];
+			$scope.copy_of_datas = []			
+			$scope.copy = angular.copy($scope.datas);
+			$scope.copy_of_datas = angular.copy($scope.datas);
 
-			$scope.copy = $scope.copy_of_datas;
+			
 			angular.forEach($scope.copy, function(value, key) {
-
-				$scope.start_date = new Date(value.start_date);
-				value.start_date = $scope.start_date;
+				if (value != null) {
+					value.start_date = new Date(value.start_date);
+				}
 			})
+			
+			$scope.copy = $filter('orderBy')($scope.copy, data);
 
-			$scope.datas = $filter('orderBy')($scope.copy, data, false);
-			angular.forEach($scope.datas, function(value, key) {
+			$scope.datas = [];
 
-				$scope.start_date = value.start_date.toLocaleDateString();
-				value.start_date = $scope.start_date;
-			})
-
-		}
-		if (data == 'end_date') {
-			$scope.copy = $scope.copy_of_datas;
 			angular.forEach($scope.copy, function(value, key) {
-				$scope.end_date = new Date(value.end_date);
-				value.end_date = $scope.end_date;
+				angular.forEach($scope.copy_of_datas,
+						function(value_copy, key_copy) {
+							if ( value.id == value_copy.id) {
+								$scope.datas.push(value_copy);
+							}
+						})
 			})
-
-			$scope.datas = $filter('orderBy')($scope.copy, data, false);
-			angular.forEach($scope.datas, function(value, key) {
-				$scope.end_date = value.end_date.toLocaleDateString();
-				value.end_date = $scope.end_date;
-				console.log(value.end_date);
-			})
-		} else {
-			$scope.datas = $filter('orderBy')($scope.datas, data);
 		}
+		if(data=='end_date'){
+			$scope.m = 0;
+			$scope.copy = [];
+			$scope.copy_of_datas = []
+			
+			$scope.copy = angular.copy($scope.datas);
+			$scope.copy_of_datas = angular.copy($scope.datas);
+
+			
+			angular.forEach($scope.copy, function(value, key) {
+				if (value != null) {
+					value.end_date = new Date(value.end_date);
+				}
+			})
+			
+			$scope.copy = $filter('orderBy')($scope.copy, data);
+
+
+			$scope.datas = [];
+
+			angular.forEach($scope.copy, function(value, key) {
+				angular.forEach($scope.copy_of_datas,
+						function(value_copy, key_copy) {
+							if ( value.id == value_copy.id) {
+								$scope.datas.push(value_copy);
+							}
+						})
+			})
+			
+		}
+		
 	}
 
 	$scope.sort_des = function(data) {
-		if (data == 'start_date') {
+		if(data=='start_date'){
+			$scope.m = 0;
+			$scope.copy = [];
+			$scope.copy_of_datas = []
+			
+			$scope.copy = angular.copy($scope.datas);
+			$scope.copy_of_datas = angular.copy($scope.datas);
 
-			$scope.copy = $scope.copy_of_datas;
+			
 			angular.forEach($scope.copy, function(value, key) {
-
-				$scope.start_date = new Date(value.start_date);
-				value.start_date = $scope.start_date;
+				if (value != null) {
+					value.start_date = new Date(value.start_date);
+				}
 			})
+			
+			$scope.copy = $filter('orderBy')($scope.copy, data,true);
 
-			$scope.datas = $filter('orderBy')($scope.copy, data, true);
-			angular.forEach($scope.datas, function(value, key) {
+			
+			$scope.datas = [];
 
-				$scope.start_date = value.start_date.toLocaleDateString();
-				value.start_date = $scope.start_date;
-
+			angular.forEach($scope.copy, function(value, key) {
+				angular.forEach($scope.copy_of_datas,
+						function(value_copy, key_copy) {
+							if ( value.id == value_copy.id) {
+								$scope.datas.push(value_copy);
+							}
+						})
 			})
-		} else {
-			$scope.datas = $filter('orderBy')($scope.datas, data, true);
+		}
+		if(data=='end_date'){
+			$scope.m = 0;
+			$scope.copy = [];
+			$scope.copy_of_datas = []
+			
+			$scope.copy = angular.copy($scope.datas);
+			$scope.copy_of_datas = angular.copy($scope.datas);
+
+			
+			angular.forEach($scope.copy, function(value, key) {
+				if (value != null) {
+					value.end_date = new Date(value.end_date);
+				}
+			})
+			
+			$scope.copy = $filter('orderBy')($scope.copy, data,true);
+
+			
+
+			$scope.datas = [];
+
+			angular.forEach($scope.copy, function(value, key) {
+				angular.forEach($scope.copy_of_datas,
+						function(value_copy, key_copy) {
+							if ( value.id == value_copy.id) {
+								$scope.datas.push(value_copy);
+							}
+						})
+			})
+			
 		}
 	}
 
 	$scope.filter = function(from, to) {
 		$scope.n = 0;
-		angular.forEach($scope.datas, function(value, key) {
-			if (value != null) {
-				$scope.n++;
-			}
-		})
-		console.log($scope.n + " is $scope.datas at the begging");
-		
 		$scope.from = from;
 		$scope.to = to;
-		$scope.load();
-		var count = Object.keys($scope.datas).length;
-		console.log(count + " is $scope.datas before looping after loading size");
-		
-		angular.forEach($scope.datas, function(value, key) {
-			if (value != null) {
-				$scope.start_date = new Date(value.start_date);
-				$scope.end_date = new Date(value.end_date);
-				/*
-				 * In the given data , few start dates are larger than end
-				 * dates. So adding ($scope.start_date>$scope.to ||
-				 * $scope.end_date<$scope.from)
-				 */
-				if ($scope.start_date < $scope.from
-						|| $scope.end_date > $scope.to
-						|| $scope.start_date >= $scope.to
-						|| $scope.end_date <= $scope.from) {
-					$scope.datas[key] = null;
-				}
-			}
+		$scope.datas = []
+		angular.forEach($scope.copy_of_datas, function(value, key) {
+			$scope.datas.push(value);
+		})
 
-		});
-		$scope.n=0;
+		angular.forEach($scope.datas, function(value, key) {
+
+			$scope.start_date = new Date(value.start_date);
+			$scope.end_date = new Date(value.end_date);
+
+			if ($scope.start_date < $scope.from || $scope.end_date > $scope.to
+					|| $scope.from > $scope.end_date
+					|| $scope.to < $scope.start_date) {
+				$scope.datas[key] = null;
+
+			}
+		})
 		angular.forEach($scope.datas, function(value, key) {
 			if (value != null) {
 				$scope.n++;
 			}
+
 		})
 		
-		console.log($scope.n + " is $scope.datas after filtering");
 	}
 
 	$scope.reset = function() {
-		$scope.load();
+		angular.forEach($scope.copy_of_datas, function(value, key) {
+			$scope.datas.push(value);
+		})
 	}
 });
 
