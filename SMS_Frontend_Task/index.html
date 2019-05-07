@@ -3,62 +3,167 @@
 <head>
 <title>SMS Frontend Task</title>
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+	rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/angular.js"></script>
 <script type="text/javascript" src="js/controller.js"></script>
 </head>
 <body data-ng-app="myApp" data-ng-controller="indexController">
-	<div class="col-sm-12 col-md-12 col-lg-12 ">
-		<form>
-			from:<input type="date" data-ng-model="from" name="from"> to:<input
-				type="date" data-ng-model="to" name="to">
-			<div>
-				<button data-ng-click="filter(from,to)">FILTER</button>
-				<button data-ng-click="reset()">RESET</button>
-			</div>
-		</form>
-	</div>
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<h3>SMS Frontend Task</h3>
 
-		<table>
-			<tbody>
+	<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12" style="margin: 50px;">
+		<div class="col-xxs-6 col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin:20px">
+			<div class="col-xxs-3 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				from: <input type="date" data-ng-model="from" name="from" required
+					pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+			</div>
+			<div class="col-xxs-3 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				to:<input type="date" data-ng-model="to" name="to"
+					data-date-format="dd-mm-yyyy">
+			</div>
+		</div>
+		<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+			<button data-ng-click="filter(from,to)">FILTER</button>
+			<button data-ng-click="reset()">RESET</button>
+		</div>
+	</div>
+	<div>
+		<table class="table table-striped ">
+			<thead style="padding: 0px;">
 				<tr>
-					<th>CITY
-						<button data-ng-click="sort_asc('city')">&uarr;</button>
-						<button data-ng-click="sort_des('city')">&darr;</button>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
+						style="padding: 0px;">
+
+						<div class="col-xxs-8 col-xs-8 col-sm-8 col-md-8 col-lg-8"
+							style="padding: 0px">CITY</div>
+						<div class="col-xxs-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"
+							style="padding: 0px">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right" data-ng-click="sort_asc('city')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right" data-ng-click="sort_des('city')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
 					</th>
-					<th>START DATE
-						<button data-ng-click="sort_asc('start_date')">&uarr;</button>
-						<button data-ng-click="sort_des('start_date')">&darr;</button>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
+						style="padding: 0px;">
+
+						<div class="col-xxs-8 col-xs-8 col-sm-8 col-md-8 col-lg-8"
+							style="padding: 0px">START DATE</div>
+						<div class="col-xxs-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"
+							style="padding: 0px">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right"
+									data-ng-click="sort_asc('start_date')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right"
+									data-ng-click="sort_des('start_date')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
 					</th>
-					<th>END DATE
-						<button data-ng-click="sort_asc('end_date')">&uarr;</button>
-						<button data-ng-click="sort_des('end_date')">&darr;</button>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
+						style="padding: 0px;">
+
+						<div class="col-xxs-8 col-xs-8 col-sm-8 col-md-8 col-lg-8"
+							style="padding: 0px">END DATE</div>
+						<div class="col-xxs-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"
+							style="padding: 0px">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right" data-ng-click="sort_asc('end_date')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right" data-ng-click="sort_des('end_date')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
 					</th>
-					<th>PRICE
-						<button data-ng-click="sort_asc('price')">&uarr;</button>
-						<button data-ng-click="sort_des('price')">&darr;</button>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
+						style="padding: 0px;">
+
+						<div class="col-xxs-8 col-xs-8 col-sm-8 col-md-8 col-lg-8"
+							style="padding: 0px">PRICE</div>
+						<div class="col-xxs-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"
+							style="padding: 0px">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right" data-ng-click="sort_asc('price')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right" data-ng-click="sort_des('price')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
 					</th>
-					<th>STATUS
-						<button data-ng-click="sort_asc('status')">&uarr;</button>
-						<button data-ng-click="sort_des('status')">&darr;</button>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
+						style="padding: 0px;">
+
+						<div class="col-xxs-8 col-xs-8 col-sm-8 col-md-8 col-lg-8"
+							style="padding: 0px">STATUS</div>
+						<div class="col-xxs-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"
+							style="padding: 0px">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right" data-ng-click="sort_asc('status')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right" data-ng-click="sort_des('status')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
 					</th>
-					<th>COLOR
-						<button data-ng-click="sort_asc('color')">&uarr;</button>
-						<button data-ng-click="sort_des('color')">&darr;</button>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
+						style="padding: 0px;">
+
+						<div class="col-xxs-8 col-xs-8 col-sm-8 col-md-8 col-lg-8"
+							style="padding: 0px">COLOR</div>
+						<div class="col-xxs-4 col-xs-4 col-sm-4 col-md-4 col-lg-4"
+							style="padding: 0px">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right" data-ng-click="sort_asc('color')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
+								style="padding: 0px">
+								<span style="float: right" data-ng-click="sort_des('color')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
 					</th>
 				</tr>
+			</thead>
+			<tbody>
 				<tr data-ng-repeat="data in datas|filter:{data:'!'} track by $index">
-					<td>{{data.city}}</td>
-					<td>{{data.start_date}}</td>
-					<td>{{data.end_date}}</td>
-					<td>{{data.price}}</td>
-					<td>{{data.status}}</td>
-					<td>{{data.color}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.city}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.start_date}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.end_date}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.price}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.status}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.color}}</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+
 </body>
 </html>
