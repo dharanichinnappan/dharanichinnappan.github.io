@@ -6,15 +6,17 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 
 	$http.get('data.json').success(function(data) {
 		$scope.datas = data;
-
+		$scope.datas_original_copy = angular.copy($scope.datas);
 	})
 
 	$scope.sort_asc = function(data) {
 		if (data == 'start_date') {
+			
 
+			$scope.m = 0;
 			$scope.copy = [];
 			$scope.copy_of_datas = []
-			
+
 			$scope.copy = angular.copy($scope.datas);
 			$scope.copy_of_datas = angular.copy($scope.datas);
 
@@ -31,16 +33,14 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 			angular.forEach($scope.copy, function(value, key) {
 				angular.forEach($scope.copy_of_datas, function(value_copy,
 						key_copy) {
-					if (value != null && value_copy!=null) {
-						if (value.id == value_copy.id) {
-							$scope.datas.push(value_copy);
-						}
-
+					if(value!=null && value_copy!=null){
+					if (value.id == value_copy.id) {
+						$scope.datas.push(value_copy);
 					}
+				}
 				})
 			})
-		}
-		if (data == 'end_date') {
+		} else if (data == 'end_date') {
 			$scope.m = 0;
 			$scope.copy = [];
 			$scope.copy_of_datas = []
@@ -67,6 +67,8 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 				})
 			})
 
+		} else {
+			$scope.datas = $filter('orderBy')($scope.datas, data);
 		}
 
 	}
@@ -99,7 +101,7 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 				})
 			})
 		}
-		if (data == 'end_date') {
+		else if (data == 'end_date') {
 			$scope.m = 0;
 			$scope.copy = [];
 			$scope.copy_of_datas = []
@@ -126,6 +128,8 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 				})
 			})
 
+		} else {
+			$scope.datas = $filter('orderBy')($scope.datas, data, true);
 		}
 	}
 
@@ -134,10 +138,8 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 		$scope.from = from;
 		$scope.to = to;
 		$scope.datas = []
-		angular.forEach($scope.copy_of_datas, function(value, key) {
-			$scope.datas.push(value);
-		})
 
+		$scope.datas = angular.copy($scope.datas_original_copy);
 		angular.forEach($scope.datas, function(value, key) {
 
 			$scope.start_date = new Date(value.start_date);
@@ -154,8 +156,9 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 	}
 
 	$scope.reset = function() {
-		angular.forEach($scope.copy_of_datas, function(value, key) {
-			$scope.datas.push(value);
+		$http.get('data.json').success(function(data) {
+			$scope.datas = data;
+
 		})
 	}
 });
