@@ -11,9 +11,6 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 
 	$scope.sort_asc = function(data) {
 		if (data == 'start_date') {
-			
-
-			$scope.m = 0;
 			$scope.copy = [];
 			$scope.copy_of_datas = []
 
@@ -33,15 +30,15 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 			angular.forEach($scope.copy, function(value, key) {
 				angular.forEach($scope.copy_of_datas, function(value_copy,
 						key_copy) {
-					if(value!=null && value_copy!=null){
-					if (value.id == value_copy.id) {
-						$scope.datas.push(value_copy);
+					if (value != null && value_copy != null) {
+						if (value.id == value_copy.id) {
+							$scope.datas.push(value_copy);
+						}
 					}
-				}
 				})
 			})
 		} else if (data == 'end_date') {
-			$scope.m = 0;
+			
 			$scope.copy = [];
 			$scope.copy_of_datas = []
 
@@ -75,7 +72,6 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 
 	$scope.sort_des = function(data) {
 		if (data == 'start_date') {
-			$scope.m = 0;
 			$scope.copy = [];
 			$scope.copy_of_datas = []
 
@@ -100,9 +96,7 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 					}
 				})
 			})
-		}
-		else if (data == 'end_date') {
-			$scope.m = 0;
+		} else if (data == 'end_date') {
 			$scope.copy = [];
 			$scope.copy_of_datas = []
 
