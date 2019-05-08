@@ -61,7 +61,6 @@
 				var confirm_password = document
 						.getElementById("confirm_password").value;
 				textbox = document.getElementById("confirm_password");
-				console.log(password, confirm_password);
 				if (confirm_password != password) {
 
 					document.getElementById("confirm_password")
@@ -70,7 +69,6 @@
 					 document.getElementById("confirm_password").style.outlineColor="red"; 
 				}
 				else{
-					alert("same");
 					location.href="index.html";
 				}
 				textbox.oninput = function() {
