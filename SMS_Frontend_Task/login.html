@@ -4,84 +4,92 @@
 <meta charset="ISO-8859-1">
 <title>LOGIN VALIDATION</title>
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/angular.js"></script>
 <script type="text/javascript" src="js/controller.js"></script>
 </head>
-<body data-ng-app="myApp" >
+<body style="background-color: #f7f7f7">
 	<form>
 		<div
-			class="col-xxs-12 col-xs-12  col-sm-4 col-md-4 col-lg-4 row login_container"
-			style="border: 1px solid #919191; padding: 0px;">
-			<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12"
-				style="border: 1px solid #919191; background-color: #eaeaea">
-				<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 ">SMS
-					Digital Gmbh</div>
-			</div>
+			class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 outer_container">
+			<div
+				class="col-xxs-12 col-xs-offset-2 col-xs-8 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4 login_container">
+				<div
+					class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 header">
+					<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 ">SMS
+						digital</div>
+				</div>
 
+				<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 "
+					style="padding: 0px 35px">
+					<div
+						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 topic">
+						Email:</div>
+					<div
+						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 email">
+						<input type="email" id="email" required="required"  />
+					</div>
+				</div>
 
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 email">
-				<input type="email" data-ng-model="email" id="email"
-					placeholder="Email" required="required" />
-			</div>
+				<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 "
+					style="padding: 0px 35px">
+					<div
+						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 topic">
+						Password:</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 password">
+						<input type="password" id="password" required="required"
+							pattern="[a-zA-Z0-9_-]{8,}"
+							title="Passwor must contain 8 characters" style="font-size:20px;" />
+					</div>
+				</div>
 
-
-
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 password">
-				<input type="password" data-ng-model="password" id="password"
-					placeholder="Password" required="required"
-					pattern="[a-zA-Z0-9_-]{8,}"
-					title="Passwor must contain 8 characters" />
-			</div>
-
-
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 confirm_password">
-				<input type="password" data-ng-model="confirm_password"
-					id="confirm_password" placeholder="Confirm Password"
-					required="required" />
-			</div>
-
-
-			<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12"
-				style="border: 1px solid #919191; background-color: #eaeaea">
-				<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 ">
-					<button type="submit" onclick="login()">LOGIN</button>
+				<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 "
+					style="padding: 0px 35px">
+					<div
+						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 topic">
+						Confirm Password:</div>
+					<div
+						class="col-xs-12 col-sm-12 col-md-12 col-lg-12 confirm_password">
+						<input type="password" id="confirm_password" required="required" style="font-size:20px;" />
+					</div>
+				</div>
+				<div
+					class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 login_button_container ">
+					<button id="login_button" type="submit" onclick="login()"
+						style="width: 100%">LOGIN</button>
 				</div>
 			</div>
-
-
 		</div>
-
-
-		<script>
-			function login() {
-
-				var password = document.getElementById("password").value;
-				var confirm_password = document
-						.getElementById("confirm_password").value;
-				textbox = document.getElementById("confirm_password");
-				if (confirm_password != password) {
-
-					document.getElementById("confirm_password")
-							.setCustomValidity("Doesn't match password");
-				
-					 document.getElementById("confirm_password").style.outlineColor="red"; 
-				}
-				else{
-					location.href="index.html";
-				}
-				textbox.oninput = function() {
-					document.getElementById("confirm_password")
-							.setCustomValidity('');
-					document.getElementById("confirm_password").style.outlineColor=""; 
-				}
-			}
-		</script>
-
-
 	</form>
+	<script>
+		function login() {
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var confirm_password = document.getElementById("confirm_password").value;
+			confirm_password_box = document.getElementById("confirm_password");
+			console.log(password, confirm_password);
 
+			if (confirm_password != password) {
+
+				document.getElementById("confirm_password").setCustomValidity(
+						"Password does not match");
+
+				document.getElementById("confirm_password").style.outlineColor = "red";
+			} else if (password.length >= 8 && password == confirm_password) {
+				location.href = "index.html";
+			}
+			confirm_password_box.oninput = function() {
+				document.getElementById("confirm_password").setCustomValidity(
+						'');
+				document.getElementById("confirm_password").style.outlineColor = "";
+			}
+		}
+	</script>
 
 </body>
 </html>
