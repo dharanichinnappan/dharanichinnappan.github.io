@@ -34,3 +34,15 @@ th,td{
 h3{
 	text-align: center;
 }
+input{
+	width:100%;
+}
+
+.email,.password,.confirm_password,#error_show{
+	
+	padding:10px 40px;
+}
+#error_show{
+	display:none;
+	color:red;
+}
