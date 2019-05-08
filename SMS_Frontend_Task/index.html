@@ -12,12 +12,15 @@
 <script type="text/javascript" src="js/controller.js"></script>
 </head>
 <body data-ng-app="myApp" data-ng-controller="indexController">
-	<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
-		<h3>SMS Frontend Task</h3>
-	</div>
 
+
+	<!-- filter box containing from and to date -->
 	<div
 		class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12 filter_outer_container">
+		<div
+			class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12 index_header">
+			<h3>SMS Frontend Task</h3>
+		</div>
 		<div
 			class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12 filter_container">
 			<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
@@ -27,31 +30,31 @@
 				</div>
 
 				<div class="col-xxs-12 col-xs-12  col-sm-6 col-md-3 col-lg-3">
-					To:<input type="date" data-ng-model="to" name="to">
+					To:<input type="date" data-ng-model="to" name="to" required>
 				</div>
 			</div>
 			<div
-				class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12 button_container">
+				class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12 filter_button_container">
 				<div class="col-xxs-12 col-xs-3 col-sm-2 col-md-1 col-lg-1">
 					<button data-ng-click="filter(from,to)">FILTER</button>
 				</div>
 				<div class="col-xxs-12 col-xs-3 col-sm-2 col-md-1 col-lg-1">
 					<button data-ng-click="reset()">RESET</button>
 				</div>
-
-
 			</div>
 		</div>
 	</div>
+
+	<!-- table containing data -->
 	<div class="table_container">
 		<table class="table table-striped ">
 			<thead style="padding: 0px;">
 				<tr>
-					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
-						style="padding: 0px;">
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
 
 						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11"
 							style="padding: 0px">CITY</div>
+
 						<div class="col-xxs-1 col-xs-1 col-sm-1 col-md-1 col-lg-1"
 							style="padding: 0px">
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
@@ -61,13 +64,13 @@
 							</div>
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span  data-ng-click="sort_des('city')"
+								<span data-ng-click="sort_des('city')"
 									class="glyphicon glyphicon-triangle-bottom"></span>
 							</div>
 						</div>
+
 					</th>
-					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
-						style="padding: 0px;">
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
 
 						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11"
 							style="padding: 0px">START DATE</div>
@@ -75,20 +78,17 @@
 							style="padding: 0px">
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span 
-									data-ng-click="sort_asc('start_date')"
+								<span data-ng-click="sort_asc('start_date')"
 									class="glyphicon glyphicon-triangle-top"></span>
 							</div>
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span 
-									data-ng-click="sort_des('start_date')"
+								<span data-ng-click="sort_des('start_date')"
 									class="glyphicon glyphicon-triangle-bottom"></span>
 							</div>
 						</div>
 					</th>
-					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
-						style="padding: 0px;">
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
 
 						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11"
 							style="padding: 0px">END DATE</div>
@@ -96,18 +96,17 @@
 							style="padding: 0px">
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span  data-ng-click="sort_asc('end_date')"
+								<span data-ng-click="sort_asc('end_date')"
 									class="glyphicon glyphicon-triangle-top"></span>
 							</div>
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span  data-ng-click="sort_des('end_date')"
+								<span data-ng-click="sort_des('end_date')"
 									class="glyphicon glyphicon-triangle-bottom"></span>
 							</div>
 						</div>
 					</th>
-					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
-						style="padding: 0px;">
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
 
 						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11"
 							style="padding: 0px">PRICE</div>
@@ -115,18 +114,17 @@
 							style="padding: 0px">
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span  data-ng-click="sort_asc('price')"
+								<span data-ng-click="sort_asc('price')"
 									class="glyphicon glyphicon-triangle-top"></span>
 							</div>
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span  data-ng-click="sort_des('price')"
+								<span data-ng-click="sort_des('price')"
 									class="glyphicon glyphicon-triangle-bottom"></span>
 							</div>
 						</div>
 					</th>
-					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
-						style="padding: 0px;">
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
 
 						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11"
 							style="padding: 0px">STATUS</div>
@@ -134,18 +132,17 @@
 							style="padding: 0px">
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span  data-ng-click="sort_asc('status')"
+								<span data-ng-click="sort_asc('status')"
 									class="glyphicon glyphicon-triangle-top"></span>
 							</div>
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span  data-ng-click="sort_des('status')"
+								<span data-ng-click="sort_des('status')"
 									class="glyphicon glyphicon-triangle-bottom"></span>
 							</div>
 						</div>
 					</th>
-					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 "
-						style="padding: 0px;">
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
 
 						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11"
 							style="padding: 0px">COLOR</div>
@@ -153,12 +150,12 @@
 							style="padding: 0px">
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span  data-ng-click="sort_asc('color')"
+								<span data-ng-click="sort_asc('color')"
 									class="glyphicon glyphicon-triangle-top"></span>
 							</div>
 							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12"
 								style="padding: 0px">
-								<span  data-ng-click="sort_des('color')"
+								<span data-ng-click="sort_des('color')"
 									class="glyphicon glyphicon-triangle-bottom"></span>
 							</div>
 						</div>
