@@ -41,6 +41,12 @@ myApp
 											"Password does not match");
 							document.getElementById("confirm_password").style.outlineColor = "red";
 						}
+						if ($scope.password != null
+								&& $scope.confirm_password != null
+								&& $scope.password.length >= 8
+								&& $scope.password == $scope.confirm_password) {
+							location.href = "index.html";
+						}
 						document.getElementById("email").oninput = function() {
 							document.getElementById("email").setCustomValidity(
 									'');
@@ -56,6 +62,7 @@ myApp
 						}
 
 					}
+					
 					$scope.showPassword = function(event) {
 						if (event.target.checked == true) {
 							$scope.password_type = 'text';
