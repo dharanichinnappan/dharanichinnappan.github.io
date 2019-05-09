@@ -41,7 +41,10 @@
 	padding: 10px;
 	color: white;
 }
-
+[type="checkbox"]
+{
+    vertical-align:middle;
+}
 /* styling for index.html*/
 .index_header {
 	background-color: #3084f2;
@@ -49,7 +52,9 @@
 	font-size: 25px;
 	text-align: center;
 }
-
+.heading_container,.glyphicon_container{
+	padding: 10px 0px;
+}
 .filter_outer_container {
 	padding: 30px;
 }
