@@ -38,7 +38,7 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 				})
 			})
 		} else if (data == 'end_date') {
-			
+
 			$scope.copy = [];
 			$scope.copy_of_datas = []
 
@@ -126,27 +126,70 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 			$scope.datas = $filter('orderBy')($scope.datas, data, true);
 		}
 	}
-
+	
+/* logics for filtering */
 	$scope.filter = function(from, to) {
-		$scope.n = 0;
-		$scope.from = from;
-		$scope.to = to;
-		$scope.datas = []
+		if(from>to){
+			document.getElementById("to").setCustomValidity(
+			"Enter a valid end date");
+		}
+		else if (from != "" && to != "") {
+			$scope.from = from;
+			$scope.to = to;
+			$scope.datas = []
 
-		$scope.datas = angular.copy($scope.datas_original_copy);
-		angular.forEach($scope.datas, function(value, key) {
+			$scope.datas = angular.copy($scope.datas_original_copy);
+			angular.forEach($scope.datas, function(value, key) {
 
-			$scope.start_date = new Date(value.start_date);
-			$scope.end_date = new Date(value.end_date);
+				$scope.start_date = new Date(value.start_date);
+				$scope.end_date = new Date(value.end_date);
+/*
+ * In given data,few start dates are higher than end date. So adding
+ * "$scope.from > $scope.end_date || $scope.to < $scope.start_date"
+ */
+				if ($scope.start_date < $scope.from
+						|| $scope.end_date > $scope.to
+						|| $scope.from > $scope.end_date
+						|| $scope.to < $scope.start_date) {
+					$scope.datas[key] = null;
 
-			if ($scope.start_date < $scope.from || $scope.end_date > $scope.to
-					|| $scope.from > $scope.end_date
-					|| $scope.to < $scope.start_date) {
-				$scope.datas[key] = null;
+				}
+			})
+		}
+		else if(from!="" && to==""){
+			
+			$scope.from = from;
+			$scope.to = to;
+			$scope.datas = []
 
-			}
-		})
+			$scope.datas = angular.copy($scope.datas_original_copy);
+			angular.forEach($scope.datas, function(value, key) {
 
+				$scope.start_date = new Date(value.start_date);
+				$scope.end_date = new Date(value.end_date);
+
+				if ($scope.start_date < $scope.from) {
+					$scope.datas[key] = null;
+
+				}
+			})
+		}
+		else if(from =="" && to!=""){
+			$scope.from = from;
+			$scope.to = to;
+			$scope.datas = []
+			$scope.datas = angular.copy($scope.datas_original_copy);
+			angular.forEach($scope.datas, function(value, key) {
+
+				$scope.start_date = new Date(value.start_date);
+				$scope.end_date = new Date(value.end_date);
+
+				if ($scope.end_date > $scope.to) {
+					$scope.datas[key] = null;
+
+				}
+			})
+		}
 	}
 
 	$scope.reset = function() {
@@ -156,27 +199,3 @@ myApp.controller('indexController', function($scope, $http, $filter) {
 		})
 	}
 });
-
-myApp
-		.controller(
-				'loginController',
-				function($scope) {
-					document.getElementById("email_null").style.display = "none";
-					document.getElementById("password_match_error").style.display = "none";
-					$scope.login = function() {
-						if ($scope.email == null) {
-							console.log("email is null");
-							document.getElementById("email_null").style.display = "block";
-							const input = document.getElementById("email");
-							input.focus();
-						}
-						if ($scope.password != $scope.confirm_password) {
-							const input = document
-									.getElementById("confirm_password");
-							input.focus();
-
-							document.getElementById("password_match_error").style.display = "block";
-
-						}
-					}
-				})
