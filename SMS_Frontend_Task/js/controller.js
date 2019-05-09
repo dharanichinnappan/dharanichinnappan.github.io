@@ -19,8 +19,7 @@ myApp
 										.getElementById("password")
 										.setCustomValidity(
 												"Please enter a password.Password must contain atleast 8 characters");
-							} else if ($scope.confirm_password == null
-									|| $scope.confirm_password != $scope.password) {
+							} else if ($scope.confirm_password == null) {
 								document.getElementById("confirm_password")
 										.setCustomValidity(
 												"Password does not match");
@@ -40,6 +39,11 @@ myApp
 										.getElementById("password")
 										.setCustomValidity(
 												"Password must contain atleast 8 characters");
+							} else if ($scope.confirm_password != $scope.password) {
+								document.getElementById("confirm_password")
+										.setCustomValidity(
+												"Password does not match");
+								document.getElementById("confirm_password").style.outlineColor = "red";
 							} else if ($scope.password != null
 									&& $scope.confirm_password != null
 									&& $scope.password.length >= 8
