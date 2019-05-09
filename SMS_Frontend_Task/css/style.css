@@ -23,15 +23,11 @@
 	margin-top: 5px;
 }
 
-input {
+.email>input, .password>input, .confirm_password>input {
 	width: 100%;
 	background-color: #eff2f7;
 	border: 1px solid #e6eaf2;
 	height: 30px;
-}
-
-.email>input, .password>input, .confirm_password>input {
-	margin-bottom: 10px;
 }
 
 .login_button_container {
@@ -59,12 +55,15 @@ input {
 }
 
 .filter_container {
-	padding: 10px;
-	
-	background-color: #f4f5f7;
-	
+	padding: 10px;	
+	background-color:white;
+	font-size:15px;
 }
-
+input{
+	background-color: #eff2f7;
+	border: 1px solid #e6eaf2;
+	height: 30px;	
+}
 .filter_button_container {
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -87,7 +86,15 @@ th {
 th, td {
 	border-right: 1px solid #f4f5f7;
 }
-
+td{
+	padding:10px 0px;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+tr:nth-child(odd) {
+  background-color: white;
+}
 .glyphicon {
 	font-size: 10px;
 	cursor: pointer;
