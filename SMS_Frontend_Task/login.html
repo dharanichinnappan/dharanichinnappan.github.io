@@ -13,7 +13,8 @@
 <script src="js/angular.js"></script>
 <script type="text/javascript" src="js/controller.js"></script>
 </head>
-<body style="background-color: #f7f7f7">
+<body data-ng-app="myApp" data-ng-controller="loginController"
+	style="background-color: #f7f7f7">
 	<form>
 		<div
 			class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 outer_container">
@@ -32,7 +33,7 @@
 						Email:</div>
 					<div
 						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 email">
-						<input type="email" id="email" required="required" />
+						<input type="text" id="email" data-ng-model="email" />
 					</div>
 				</div>
 
@@ -42,9 +43,7 @@
 						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 topic">
 						Password:</div>
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 password">
-						<input type="password" id="password" required="required"
-							pattern="[a-zA-Z0-9_-]{8,}"
-							title="Passwor must contain 8 characters"
+						<input type="{{password_type}}" id="password" data-ng-model="password"
 							style="font-size: 20px;" />
 					</div>
 				</div>
@@ -56,40 +55,29 @@
 						Confirm Password:</div>
 					<div
 						class="col-xs-12 col-sm-12 col-md-12 col-lg-12 confirm_password">
-						<input type="password" id="confirm_password" required="required"
-							style="font-size: 20px;" />
+						<input type="{{password_type}}" id="confirm_password"
+							data-ng-model="confirm_password" style="font-size: 20px;" />
 					</div>
 				</div>
+
+				<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 "
+					style="padding: 0px 35px">
+					<div
+						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 topic">
+						<input type="checkbox" name="show_password" data-ng-model="show_password" value="show" data-ng-click="showPassword($event)"> 
+						Show password<br>
+					</div>
+				</div>
+
 				<div
 					class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 login_button_container ">
-					<button id="login_button" type="submit" onclick="login()"
+					<button id="login_button" type="submit" data-ng-click="login()"
 						style="width: 100%">LOGIN</button>
 				</div>
 			</div>
 		</div>
 	</form>
-	<script>
-		function login() {
-			var email = document.getElementById("email").value;
-			var password = document.getElementById("password").value;
-			var confirm_password = document.getElementById("confirm_password").value;
-			confirm_password_box = document.getElementById("confirm_password");
-			if (confirm_password != password) {
 
-				document.getElementById("confirm_password").setCustomValidity(
-						"Password does not match");
-
-				document.getElementById("confirm_password").style.outlineColor = "red";
-			} else if (password.length >= 8 && password == confirm_password) {
-				location.href = "index.html";
-			}
-			confirm_password_box.oninput = function() {
-				document.getElementById("confirm_password").setCustomValidity(
-						'');
-				document.getElementById("confirm_password").style.outlineColor = "";
-			}
-		}
-	</script>
 
 </body>
 </html>
