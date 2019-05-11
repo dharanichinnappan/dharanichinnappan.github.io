@@ -73,7 +73,9 @@ input{
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-
+#from,#to{
+	margin-bottom: 20px;
+}
 .table_container {
 	padding: 30px;
 }
