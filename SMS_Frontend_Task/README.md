@@ -36,9 +36,9 @@
         
              (or)
              
-   2.The code can be downloaded from https://github.com/dharanichinnappan/SMS-Frontend-Challenge 
-        - The html pages (**index.html** and **login.html**) can be viewed in browser
-        - To view the html pages in 'Chrome' browser start chrome with **chrome.exe --disable-web-security**
-   3.I used Eclipse as IDE and ran the project through tomcat server.
+   2. The code can be downloaded from https://github.com/dharanichinnappan/SMS-Frontend-Challenge. 
+         - The html pages (**index.html** and **login.html**) can be viewed in browser
+         - To view the html pages in 'Chrome' browser start chrome with **chrome.exe --disable-web-security**
+   3. I used Eclipse as IDE and ran the project through tomcat server.
           
           
