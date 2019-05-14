@@ -1,37 +1,206 @@
 /* styling for index.html */
+body {
+	background-repeat: no-repeat;
+	background-size: cover;	
+	color:white;
+}
+
 .navbar-inverse {
 	margin-bottom: 0px ! important;
 }
 
 .navbar li  a {
 	color: white ! important;
+	font-size: 15px;
+}
+
+a:hover {
+	background-color: #750404 ! important;
+}
+
+a:active {
+	background-color: #750404 ! important;
 }
 
 .navbar-brand {
 	color: white ! important;
 	position: relative;
 }
-
-
-
-
-
-/* styling for game.html */
-.parentDiv {
-	paading: 10px;
+/* sytleing for index.html */
+.welcomeMessageContainer {
+	padding: 200px;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	font-size: 30px;
 }
 
-.mainDiv {
+.welcomeMessageContainer>div {
+	padding: 10px;
+}
+/* styling for game.html */
+.card {
+	height: 75px;
+	padding: 0px;
+}
+
+.front, .back {
+	border: 1px gray solid;
+	border-radius: 25%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.topDiv {
 	padding: 10px;
 }
 
-.tile {
-	border: 1px solid blue;
-	height: 200px;
-	
-	
+.gameWelcomeContainer {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	padding: 20px;
+	display: inline-block;
 }
 
-.tile {
-	border: 1px solid green;
+.gameWelcomeContainer>div {
+	padding: 10px;
 }
+
+.newGame {
+	margin-top: 20px;
+}
+
+#newGameButton {
+	background-color: white;
+	border-radius: 25px;
+	padding: 10px 30px;
+}
+
+.score {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	margin-bottom: 20px;
+	font-family: cursive;
+}
+
+.score>div{
+	margin: 10px  0px;
+}
+
+
+.instructionHeader>p{
+	font-size: 18px;
+	padding-right: 10px;
+}
+
+.InstructionList{
+	font-size: 18px;
+}
+.banner {
+	padding: 30px 0px;
+	color: white;
+	text-align: center;
+	display: inline-block;
+	background-color: black;
+}
+
+.banner_heading {
+	color: white;
+	margin: 20px 0px;
+	font-size: 80px;
+	font-weight: bold;
+}
+
+.bannerText {
+	background: transparent ! important;
+	color: white ! important;
+	text-align: center ! important;
+	border: none ! important;
+	font-family: Arial ! important;
+	font-size: 28px ! important;
+	color: #eaecef ! important;
+}
+
+.pre {
+	background: transparent ! important;
+	color: white ! important;
+	text-align: left ! important;
+	border: none ! important;
+	font-family: Arial ! important;
+	font-size: 28px ! important;
+	color: #eaecef ! important;
+}
+
+#aboutUs{
+	background-image: none;
+}
+.team,.products{
+	color:black;
+	text-align: center;
+	font-size: 20px;
+	padding:20px;
+}
+#fourColumns {
+	margin-top: 30px;
+}
+.coloumnContent {
+	background-color: #dee3ea;
+	color: black;
+	padding: 20px;
+	font-size: 15px;
+}
+.columnHeading {
+	font-size:15px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.threeColumns {
+	margin-top: 30px;
+	padding: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
