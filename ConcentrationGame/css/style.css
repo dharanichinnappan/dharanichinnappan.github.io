@@ -3,6 +3,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;	
 	color:white;
+	height:100%;
 }
 
 .navbar-inverse {
