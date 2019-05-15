@@ -3,7 +3,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;	
 	color:white;
-	height:100%;
+	
 }
 
 .navbar-inverse {
@@ -16,12 +16,9 @@ body {
 	
 }
 .navContainer{
-padding:0px ! important;}
-@media only screen and (max-width: 520px) {
-	.col-xxs-12 {
-		width: 100%;
-	}
+	padding:0px ! important;
 }
+
 a:hover {
 	background-color: #750404 ! important;
 }
