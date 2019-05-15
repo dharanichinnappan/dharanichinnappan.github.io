@@ -11,7 +11,8 @@ body {
 
 .navbar li  a {
 	color: white ! important;
-	font-size: 15px;
+	font-size: 20px;
+	padding-left: 40px! important;
 }
 
 a:hover {
