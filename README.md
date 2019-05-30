@@ -1,43 +1,78 @@
 # dharanichinnappan.github.io
-Website Development
+Frontend Development
 
-I have developed following projects by using **HTML**,**CSS**,**Bootstrap**,**PHP** and **AngularJs**.
+I have developed following projects .
 
-**1.SinglePageWebsite**
+**_1. SinglePageWebsite_**
 
 **Description:**
 
- &nbsp;&nbsp;&nbsp;&nbsp;This is an **Single Page  Responsive Website** developed using **HTML** ,**CSS**,**Bootstrap**.
+   - This is an **Single Page  Responsive Website** developed using _HTML_ ,_CSS_ and _Bootstrap_
+   - A _Navigation bar_ is provided to navigate to different sections within the page.
    
 **Website Link:**
 
 https://dharanichinnappan.github.io/singlePageWebsite
 
-**2.SinglePageBusinessWebsite**
+**_2. SinglePageBusinessWebsite_**
 
 **Description:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;This is an **Single Page  Responsive Business Website** developed using **HTML** ,**CSS**,**Bootstrap** and **jQuery**.
+   - This is an **Single Page  Responsive Business Website** developed using _HTML_ ,_CSS_,_Bootstrap_ and _jQuery_.
+   - A _Navigation bar_ is provided to navigate to different sections within the page.
 
 **Website Link:**
 
 https://dharanichinnappan.github.io/SinglePageBussinessWebsite
 
-**3.MultiPageWebsite**
+**_3. MultiPageWebsite_**
 
 **Description:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;This is an PhoneBook Application developed using **HTML** ,**CSS** ,**Bootstrap** and **PHP**.
+   - This is a Multipage Website developed using _HTML_ ,_CSS_ ,_Bootstrap_,_AngularJs_ and _PHP_
+   - Navigation to multiple pages are done through **AngularJs Routing**
+   - Connections through database (**MySql**) and retrieving of data from database is done with _PHP_  
 
-**4.AngularJsPhoneBook**
-
-**Description:**
-
-&nbsp;&nbsp;&nbsp;&nbsp;This is an PhoneBook Application developed using **AngularJs**.
-
-**5.MultipleChoiceQuiz**
+**_4. AngularJsPhoneBook_**
 
 **Description:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;This is an PhoneBook Application developed using **HTML** ,**CSS** ,**Bootstrap** and **PHP**.
+   - This is an PhoneBook Application provided with various features like _adding new contact_ and _Modifying existing contact_
+   - All the logics are deployed in _AngularJs Controller_
+   - Connections through database (**MySql**) and retrieving of data from database is done with _PHP_
+
+**_5. MultipleChoiceQuiz_**
+
+**Description:**
+
+   - This is a website containing _Multiple Choice Quiz_
+   - Navigation to multiple pages are done through **AngularJs Routing**
+   - All the logics are deployed in _AngularJs Controller_
+   - Connections through database (**MySql**) and retrieving of data from database is done with _PHP_
+   - After submitt
+   
+  **_6. Concentration Game_**
+  
+  **Description:**
+  
+  - This is a multi page website containing _Concentration Game_
+  - All the logics are deployed in _JavaScript_
+  
+  **Website Link:**
+  
+  https://dharanichinnappan.github.io/ConcentrationGame/
+  
+  **_7. Excel Sheet_**
+  
+  **Description**
+  
+  - This is a website with excel sheet with a login page.
+  - This website is provided with features like _sorting_ and _filtering_
+  - Sorting and filtering logics are written in _JavaScript_
+  - A column is sorted based on color hue value
+  
+   **Website Link:**
+  
+  https://dharanichinnappan.github.io/ExcelSheet/
+  
   
