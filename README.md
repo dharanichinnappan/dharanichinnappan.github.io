@@ -3,7 +3,7 @@ Frontend Development
 
 I have developed following projects .
 
-**1.SinglePageWebsite**
+**_1. SinglePageWebsite_**
 
 **Description:**
 
@@ -14,7 +14,7 @@ I have developed following projects .
 
 https://dharanichinnappan.github.io/singlePageWebsite
 
-**2.SinglePageBusinessWebsite**
+**_2. SinglePageBusinessWebsite_**
 
 **Description:**
 
@@ -25,7 +25,7 @@ https://dharanichinnappan.github.io/singlePageWebsite
 
 https://dharanichinnappan.github.io/SinglePageBussinessWebsite
 
-**3.MultiPageWebsite**
+**_3. MultiPageWebsite_**
 
 **Description:**
 
@@ -33,7 +33,7 @@ https://dharanichinnappan.github.io/SinglePageBussinessWebsite
    - Navigation to multiple pages are done through **AngularJs Routing**.
    - Connections through database (**MySql**) and retrieving of data from database is done with **PHP**  
 
-**4.AngularJsPhoneBook**
+**_4. AngularJsPhoneBook_**
 
 **Description:**
 
@@ -41,9 +41,20 @@ https://dharanichinnappan.github.io/SinglePageBussinessWebsite
    - All the logics are deployed in _AngularJs Controller_
    - Connections through database (**MySql**) and retrieving of data from database is done with **PHP**
 
-**5.MultipleChoiceQuiz**
+**_5. MultipleChoiceQuiz_**
 
 **Description:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;This is an PhoneBook Application developed using **HTML** ,**CSS** ,**Bootstrap** and **PHP**.
+   - This is a website containing _Multiple Choice Quiz_
+   - Navigation to multiple pages are done through **AngularJs Routing**
+   - All the logics are deployed in _AngularJs Controller_
+   - Connections through database (**MySql**) and retrieving of data from database is done with **PHP**
+   
+  **_6. Concentration Game_**
+  
+  **Description:**
+  
+  - This is a multi page website containing _Concentration Game_
+  - All the logics are deployed in _JavaScript_
+  
   
