@@ -1,0 +1,132 @@
+.body {
+	/* background-color: #faf5f5;  */
+	
+}
+
+.navbar {
+	background-color: #faf5f5;
+	padding: 0px !important;
+	margin-bottom: 0px ! important;
+	border: 1px solid black ! important;
+}
+
+.navbar li  a, .navbar-brand {
+	color: black ! important;
+	font-size: 20px;
+}
+
+.who, .what, .how {
+	border: 1px solid black;
+	padding: 0px;
+	background-color: black;
+	color: white;
+	font-size: 25px;
+}
+
+.colabrate {
+	color: black;
+	font-size: 30px;
+	margin-top: 40px; margin-bottom : 20px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.who_content, .what_content {
+	height: 200px;
+	border: 1px solid black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: black;
+	margin-bottom: 20px;
+}
+
+.how_content {
+	border: 1px solid black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: black;
+	margin-bottom: 20px;
+}
+
+.how_content>div {
+	height: 300px;
+	margin: 20px 0px;
+}
+
+.heading {
+	font-size: 20px;
+	padding-bottom: 15px;
+}
+
+.contact {
+	padding: 20px 40px ! important;
+	background-color: white;
+}
+
+.map {
+	padding: 0px ! important;
+	background-color: white;
+}
+
+input {
+	width: 100%;
+	margin-bottom: 10px ! important;
+	border: 1px solid black;
+}
+
+.name, .company_name, .email, .mobileNo, .message {
+	margin-top: 10px;
+	font-size: 20px;
+}
+
+.address_heading {
+	font-size: 30px;
+	background-color: white;
+}
+
+.address {
+	background-color: white;
+	padding: 20px 0px;
+	font-size: 20px;
+}
+
+.contact_button {
+	text-align: center;
+	font-size: 15px;
+	margin-top: 15px;
+}
+
+button {
+	background-color: #4287f5;
+	text-align: center;
+}
+
+.home_textiles, .apparels {
+	
+}
+
+.home_textiles_heading, .apparels_heading {
+	margin: 20px 0px;
+	text-align: center;
+	font-size: 25px;
+}
+
+#demo {
+	font-size: 40px;
+	text-align: center;
+	margin-top: 30px;
+}
+.coming_soon{
+	font-size:60px;
+	text-align: center;
+	margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
