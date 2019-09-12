@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0,  minimum-scale=1.0">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title>Contact us</title>
+</head>
+<body style="background-color: #faf5f5">
+	<nav class="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">LOGO</a>
+			</div>
+			<div class="collapse navbar-collapse " id="myNavbar">
+				<ul class="nav navbar-nav ">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="About-us.html">About us</a></li>
+					<li><a href="Products.html">Products</a></li>
+					<li><a href="Contact-us.html">Contact Us</a></li>
+					<li><a href="Online-shop.html">Online Shop</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="col-sm-12 col-md-12 col-lg-12">
+		<div class="col-sm-12 col-md-12 col-lg-12 colabrate">Let us
+			colabrate!!</div>
+
+		<div class="col-sm-6 col-md-6 col-lg-6 ">
+			<div class="col-sm-12 col-md-12 col-lg-12 address">
+				<div class="col-sm-12 col-md-12 col-lg-12 address_heading">Address:</div>
+				<div class="col-sm-12 col-md-12 col-lg-12">Engadiner Strasse 2</div>
+				<div class="col-sm-12 col-md-12 col-lg-12">Furstenreid West</div>
+				<div class="col-sm-12 col-md-12 col-lg-12">Munich</div>
+			</div>
+
+			<div class="col-sm-12 col-md-12 col-lg-12 map">
+				<div id="googleMap"
+					style="width: 100%; height: 400px; border: 1px solid red;"></div>
+			</div>
+			<script>
+				function myMap() {
+					var mapProp = {
+						center : new google.maps.LatLng(51508742, -0120850),
+						zoom : 5,
+						mapTypeId : google.maps.MapTypeId.ROADMAP
+					};
+					var map = new google.maps.Map(document
+							.getElementById("googleMap"), mapProp);
+				}
+			</script>
+
+			<script type="text/javascript"
+				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD474SLjsrZIVwlNsRf8Vw7w7H5ZuJiMyE&callback=myMap"></script>
+		</div>
+
+		<div class="col-sm-6  col-md-6 col-lg-6 contact">
+
+			<div class="col-sm-12 col-md-12 col-lg-12 name">
+				<div class="col-sm-12 col-md-12 col-lg-12">Name:</div>
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<input type="text" ng-model="firstName">
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-12 col-lg-12 company_name">
+				<div class="col-sm-12 col-md-12 col-lg-12">Company Name:</div>
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<input type="text" ng-model="firstName">
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-12 col-lg-12 email">
+				<div class="col-sm-12 col-md-12 col-lg-12">EMail:</div>
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<input type="text" ng-model="firstName">
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-12 col-lg-12 mobileNo">
+				<div class="col-sm-12 col-md-12 col-lg-12">Mobile No.:</div>
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<input type="text" ng-model="firstName">
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-12 col-lg-12 message">
+				<div class="col-sm-12 col-md-12 col-lg-12">Message:</div>
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<textarea rows="4" cols="45"></textarea>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-12 col-lg-12 contact_button">
+				<div class="col-sm-12 col-md-12 col-lg-12"><button >CONTACT</button></div>
+				
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
