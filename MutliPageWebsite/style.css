@@ -1,0 +1,203 @@
+body {
+	background-color: #556989;
+	color: black;
+}
+
+.navbar-default {
+	background-color: #495b77 ! important;
+}
+
+.navbar li  a {
+	color: white ! important;
+	height: 100px;
+}
+
+.navbar-brand {
+	position: relative;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	margin: 0 auto;
+	color: white ! important;
+	
+}
+
+.navbar-header .navbar-brand {
+	line-height: 50px;
+}
+
+.navbar-collapse .navbar-right{
+	height:100px;
+	line-height: 50px;
+}
+
+.navbar-collapse .dropdown-menu {
+	background-color: #495b77;
+	color: white;
+}
+
+.navbar-collapse .dropdown-menu li a {
+	height: 50px;
+	width: 100%;
+	color: white;
+}
+
+@media ( min-width : 768px) {
+	.navbar-center {
+		position: absolute;
+		left: 50%;
+		transform: translatex(-50%);
+		z-index: 10000;
+	}
+}
+
+.headings {
+	color: white;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.addProductsheadings{
+	color:white;
+	text-align: left;
+	font-size: 18px;
+}
+.addProductsinnerheadings{
+	text-align: left;
+	color:white;
+	font-size: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.innerheadings {
+	color: white;
+	font-size: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.content {
+	padding: 20px;
+}
+
+.content .contentBox {
+	height: 450px;
+	margin-bottom: 30px;
+}
+
+.sections {
+	background-color: #495b77;
+	padding: 35px;
+	color: white;
+	height: 400px;
+}
+
+.notification {
+	background-color: #556989;
+	color: white;
+	margin-top: 15px;
+	font-size: 18px;
+}
+
+.notificationScrollable {
+	height: 290px;
+	overflow-y: scroll;
+}
+.dot {
+  height: 10px;
+  width: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.table {
+	height: 350px;
+	overflow-y: scroll;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	font-weight: bold;
+}
+
+th, td {
+	border-bottom: 1px solid #424242;
+	background-color: #556989;
+	color: white;
+	height: 50px;
+	text-align: left;
+}
+
+.content1 .contentBox1 {
+	height: 350px;
+}
+
+.productButton {
+	width: 100%;
+	background-color: orange;
+	height: 50px;
+	margin-top: 10px;
+}
+
+.section {
+	height: 550px;
+}
+
+.innerSection {
+	background-color: #495b77;
+	height: 100%;
+	padding: 20px;
+}
+
+.sectionContent {
+	padding: 40px;
+	height: 80%;
+	overflow-y: scroll;
+	padding: 0px;
+}
+
+.accountSection {
+	padding: 20px;
+}
+
+.accountInnerSection {
+	background-color: #495b77;
+	padding: 30px;
+	color: white;
+}
+
+.input {
+	height: 50px;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
+	background-color: #556989;
+}
+
+textarea, select, option {
+	background-color: #556989;
+	color: white;
+}
+
+.addProductsSection {
+	background-color: #495b77;
+	padding:20px 0px;
+	transform: translateX(25%);
+	margin-bottom: 30px;
+}
+
+.center-div {
+	height: 450px;
+	width: 500px;
+	position: relative;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}

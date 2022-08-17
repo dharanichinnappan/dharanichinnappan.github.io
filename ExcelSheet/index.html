@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Excel Sheet</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/angular.js"></script>
+<script type="text/javascript" src="js/indexController.js"></script>
+</head>
+<body data-ng-app="myApp" data-ng-controller="indexController"
+	style="background-color: #f2eded">
+
+
+	<!-- filter box containing from and to date -->
+	<form>
+		<div
+			class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12 filter_outer_container">
+			<div
+				class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12 index_header">
+				<h3>EXCEL SHEET</h3>
+			</div>
+			<div
+				class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12 filter_container">
+				<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+
+					<div class="col-xxs-12 col-xs-12 col-sm-6 col-md-3 col-lg-3">
+						From:<input type="date" data-ng-model="from" name="from" id="from">
+					</div>
+
+					<div class="col-xxs-12 col-xs-12  col-sm-6 col-md-3 col-lg-3">
+						To:<input type="date" data-ng-model="to" name="to" id="to">
+					</div>
+				</div>
+				<div
+					class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12 filter_button_container">
+					<div class="col-xxs-12 col-xs-3 col-sm-2 col-md-1 col-lg-1">
+						<button data-ng-click="filter(from,to)">FILTER</button>
+					</div>
+					<div class="col-xxs-12 col-xs-3 col-sm-2 col-md-1 col-lg-1">
+						<button data-ng-click="reset()">RESET</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<!-- table containing data -->
+	<div class="table_container">
+		<table>
+			<thead>
+				<tr>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+
+						<div
+							class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11 heading_container">CITY</div>
+
+						<div
+							class="col-xxs-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 glyphicon_container">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_asc('city')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_des('city')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
+
+					</th>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+
+						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11 heading_container">START
+							DATE</div>
+						<div class="col-xxs-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 glyphicon_container">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_asc('start_date')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_des('start_date')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
+					</th>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+
+						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11 heading_container">END
+							DATE</div>
+						<div class="col-xxs-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 glyphicon_container">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_asc('end_date')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_des('end_date')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
+					</th>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+
+						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11 heading_container">PRICE</div>
+						<div class="col-xxs-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 glyphicon_container">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_asc('price')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_des('price')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
+					</th>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+
+						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11 heading_container">STATUS</div>
+						<div class="col-xxs-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 glyphicon_container">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_asc('status')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_des('status')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
+					</th>
+					<th class="col-xxs-2 col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+
+						<div class="col-xxs-11 col-xs-11 col-sm-11 col-md-11 col-lg-11 heading_container">COLOR</div>
+						<div class="col-xxs-1 col-xs-1 col-sm-1 col-md-1 col-lg-1 glyphicon_container">
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_asc('color')"
+									class="glyphicon glyphicon-triangle-top"></span>
+							</div>
+							<div class="col-xxs-12 col-xs-12 col-sm-12  col-md-12 col-lg-12">
+								<span data-ng-click="sort_des('color')"
+									class="glyphicon glyphicon-triangle-bottom"></span>
+							</div>
+						</div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="data in datas|filter:{data:'!'} track by $index">
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.city}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.start_date}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.end_date}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.price}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2">{{data.status}}</td>
+					<td class="col-sm-2 col-md-2 col-lg-2" style="background-color:{{data.color}}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

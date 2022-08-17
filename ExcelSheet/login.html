@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>LOGIN FORM VALIDATION</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/angular.js"></script>
+<script type="text/javascript" src="js/loginController.js"></script>
+</head>
+<body data-ng-app="myApp" data-ng-controller="loginController"
+	style="background-color: #f7f7f7">
+	<form>
+		<div
+			class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 outer_container">
+			<div
+				class="col-xxs-12 col-xs-offset-2 col-xs-8 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4 login_container">
+				<div
+					class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 header">
+					<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 ">LOGIN
+						FORM</div>
+				</div>
+
+				<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 "
+					style="padding: 0px 35px">
+					<div
+						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 topic">
+						Email:</div>
+					<div
+						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 email">
+						<input type="text" id="email" data-ng-model="email" />
+					</div>
+				</div>
+
+				<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 "
+					style="padding: 0px 35px">
+					<div
+						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 topic">
+						Password:</div>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 password">
+						<input type="{{password_type}}" id="password" data-ng-model="password"
+							style="font-size: 20px;" />
+					</div>
+				</div>
+
+				<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 "
+					style="padding: 0px 35px">
+					<div
+						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 topic">
+						Confirm Password:</div>
+					<div
+						class="col-xs-12 col-sm-12 col-md-12 col-lg-12 confirm_password">
+						<input type="{{password_type}}" id="confirm_password"
+							data-ng-model="confirm_password" style="font-size: 20px;" />
+					</div>
+				</div>
+
+				<div class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 "
+					style="padding: 0px 35px">
+					<div
+						class="col-xxs-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 topic">
+						<input type="checkbox" name="show_password" data-ng-model="show_password" value="show" data-ng-click="showPassword($event)"> 
+						Show password<br>
+					</div>
+				</div>
+
+				<div
+					class="col-xxs-12 col-xs-12  col-sm-12 col-md-12 col-lg-12 login_button_container ">
+					<button id="login_button" type="submit" data-ng-click="login()"
+						style="width: 100%">LOGIN</button>
+				</div>
+			</div>
+		</div>
+	</form>
+
+
+</body>
+</html>
